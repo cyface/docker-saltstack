@@ -9,7 +9,7 @@ from a checkout of this directory on a system setup to run docker compose, and t
 
 Then you can (in a separate shell window):
 
-`docker ps | grep salt-master`
+`docker ps -qf name=salt-master`
 
 and get the id of the container running the master (something like `2e321e3f1fbf`).
 
