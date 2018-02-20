@@ -2,13 +2,10 @@ version: '2'
 
 services: 
   salt-master:
-    #image: cyface/docker-saltstack:master
     build:
       context: .
       dockerfile: Dockerfile.master
-    command: salt-master -l debug
   salt-minion:
-    #image: cyface/docker-saltstack:minion  
     build:
       context: .
       dockerfile: Dockerfile.minion
