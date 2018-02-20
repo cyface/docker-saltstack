@@ -1,7 +1,7 @@
 # docker-saltstack
 Docker Compose setup to spin up a salt master and minion.
 
-The salt-master is set up to accept all minions that try to connect, which is not a good prod configuration.
+The salt-master is set up to accept all minions that try to connect, which is not a good prod configuration, but makes this setup quick and easy for test and dev purposes.  No ports are externally exposed.
 
 Just run 
 `docker-compose up`
