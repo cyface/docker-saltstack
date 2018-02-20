@@ -15,7 +15,7 @@ and get the id of the container running the master (something like `2e321e3f1fbf
 
 Then you can attach to the master and run commands:
 
-`docker exec -it <id> bash`  (somethhing like `docker exec -it 2e321e3f1fbf bash`)
+`docker exec -it <id> bash`  (something like `docker exec -it 2e321e3f1fbf bash`)
 
 From that command line you can run something like:
 
