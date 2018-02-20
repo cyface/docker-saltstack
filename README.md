@@ -4,11 +4,15 @@ Docker Compose setup to spin up a salt master and minion.
 You will need a system with Docker and Docker Compose installed to use this project.
 
 Just run:
+
 `docker-compose up`
+
 from a checkout of this directory, and the master and minion will start up with debug logging to the console.
 
 Then you can run (in a separate shell window):
+
 `docker-compose exec salt-master bash`
+
 and it will log you into the command line of the salt-master server.
 
 From that command line you can run something like:
