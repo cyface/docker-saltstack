@@ -1,16 +1,14 @@
 # docker-saltstack
 Docker Compose setup to spin up a salt master and minion.
 
-The salt-master is set up to accept all minions that try to connect, which is not a good prod configuration, but makes this setup quick and easy for test and dev purposes.  No ports are externally exposed.
+You will need a system with Docker and Docker Compose installed to use this project.
 
-Just run 
+Just run:
 `docker-compose up`
-from a checkout of this directory on a system setup to run docker compose, and the master and minion will start up.
+from a checkout of this directory, and the master and minion will start up with debug logging to the console.
 
-Then you can (in a separate shell window):
-
+Then you can run (in a separate shell window):
 `docker-compose exec salt-master bash`
-
 and it will log you into the command line of the salt-master server.
 
 From that command line you can run something like:
@@ -22,3 +20,5 @@ and in the window where you started docker compose, you will see the log output 
 [The Salt Remote Execution Tutorial](https://docs.saltstack.com/en/latest/topics/tutorials/modules.html) has some quick examples of the comamnds you can run from the master.
 
 Note: you will see log messages like : "Could not determine init system from command line" - those are just because salt is running in the foreground and not from an auto-startup.
+
+The salt-master is set up to accept all minions that try to connect.  Since the network that the salt-master sees is only the docker-compose network, this means that only minions within this docker-compose service network will be able to connect (and not random other minions external to docker).
