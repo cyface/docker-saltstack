@@ -1,15 +1,14 @@
 FROM centos
 MAINTAINER tim@cyface.com
 
-RUN yum clean all && \
-      yum install -y yum install epel-release && \
-      yum install -y yum install --nogpgcheck https://repo.saltstack.com/yum/redhat/salt-repo-latest-2.el7.noarch.rpm && \
-      yum update -y && \
-      yum install -y sudo git tmux vim virt-what salt-master salt-minion && \
-      yum clean all && \
-      rm -rf /var/cache/yum
+RUN yum install -y epel-release && \
+    yum install -y --nogpgcheck https://repo.saltstack.com/yum/redhat/salt-repo-latest-2.el7.noarch.rpm && \
+    yum update -y && \
+    yum install -y virt-what salt-master salt-minion && \
+    yum clean all && \
+    rm -rf /var/cache/yum
 
-RUN   sed -i "s|#auto_accept: False|auto_accept: True|g" /etc/salt/master
+RUN sed -i "s|#auto_accept: False|auto_accept: True|g" /etc/salt/master
 
 ENTRYPOINT ["salt-master", "-l", "debug"]
 
