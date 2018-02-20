@@ -18,3 +18,5 @@ From that command line you can run something like:
 `salt '*' test.ping`
 
 and in the window where you started docker compose, you will see the log output of both the master sending the command and the minion receiving the command and replying.
+
+[The Salt Remote Execution Tutorial](https://docs.saltstack.com/en/latest/topics/tutorials/modules.html) has some quick examples of the comamnds you can run from the master.
