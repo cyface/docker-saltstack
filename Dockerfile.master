@@ -11,4 +11,3 @@ RUN yum install -y epel-release && \
 RUN sed -i "s|#auto_accept: False|auto_accept: True|g" /etc/salt/master
 
 ENTRYPOINT ["salt-master", "-l", "debug"]
-
