@@ -1,5 +1,7 @@
 # docker-saltstack
-Docker Compose setup to spin up a salt master and minion.
+Docker Compose setup to spin up a salt master and minions.
+
+You can read a full article describing how to use this setup [here](https://medium.com/@timlwhite/the-simplest-way-to-learn-saltstack-cd9f5edbc967).
 
 You will need a system with Docker and Docker Compose installed to use this project.
 
