@@ -28,3 +28,5 @@ and in the window where you started docker compose, you will see the log output 
 Note: you will see log messages like : "Could not determine init system from command line" - those are just because salt is running in the foreground and not from an auto-startup.
 
 The salt-master is set up to accept all minions that try to connect.  Since the network that the salt-master sees is only the docker-compose network, this means that only minions within this docker-compose service network will be able to connect (and not random other minions external to docker).
+
+The hostnames match the names of the containers - so the master is `salt-master` and the minions are `salt-minion_1` and `salt-minion_2` since we have a `scale` of 2 by default.
