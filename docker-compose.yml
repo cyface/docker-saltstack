@@ -1,4 +1,4 @@
-version: '2.2'
+version: '3.7'
 
 services: 
   salt-master:
@@ -11,4 +11,3 @@ services:
       dockerfile: Dockerfile.minion
     depends_on:
       - salt-master
-    scale: 2
