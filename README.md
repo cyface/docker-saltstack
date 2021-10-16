@@ -13,7 +13,7 @@ from a checkout of this directory, and the master and minion will start up with 
 
 Then you can run (in a separate shell window):
 
-`docker-compose exec salt-master bash`
+`docker exec salt-master bash`
 
 and it will log you into the command line of the salt-master server.
 
