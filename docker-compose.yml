@@ -5,9 +5,32 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.master
+    networks:
+      my-net:
+        ipv4_address: 10.0.0.200
+    volumes:
+      - my_vol:/etc/salt
+
   salt-minion:
     build:
       context: .
       dockerfile: Dockerfile.minion
     depends_on:
       - salt-master
+    networks:
+      my-net:
+        ipv4_address: 10.0.0.201
+      
+networks:
+  my-net:
+    driver: macvlan
+    driver_opts:
+      parent: eno1 
+    ipam:
+      config:
+        - subnet: 10.0.0.0/22
+          gateway: 10.0.0.1
+
+volumes:
+  my_vol:
+    driver: local
